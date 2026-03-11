@@ -32,10 +32,15 @@ public class Main extends javax.swing.JFrame {
     // --- VARIABLES GLOBALES ---
     private Color currentColor = Color.BLACK;
     private int currentSize = 10;
-    private static final String APP_VERSION = "0.2.4";
+    private static final String APP_VERSION = "0.2.5";
     private static final String APP_AUTHOR = "rescamilla"; 
     private static final String GIT_AUTHOR = "https://github.com/RichyKunBv";
     private static final String APP_GIT = "https://github.com/RichyKunBv/Chafaint-2";
+    private static final String APP_ICON = "Miku.png";
+    private static final String APP_NAME = "Chafaint 2 Premium Delux Super Papu Pro Redondo Edition";
+    private static final String APP_NM = "Proyecto Chafaint 2";
+    private static final String APP_CN = "Miku";
+    
     private LienzoPanel lienzo;
 
     // Variables para feedback temporal
@@ -262,15 +267,15 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
 
-        setTitle("Chafaint 2 Premium Delux Super Papu Pro Redondo Edition");
+        setTitle(APP_NAME);
+        
         
         // Icono
         try {
-            java.net.URL urlIcono = getClass().getResource("/chafaint/Miku.png");
+java.net.URL urlIcono = getClass().getResource("/chafaint/" + APP_ICON);
             if (urlIcono == null) {
-                urlIcono = getClass().getResource("Miku.png");
+                urlIcono = getClass().getResource(APP_ICON);
             }
-            
             if (urlIcono != null) {
                 java.awt.Image icono = new javax.swing.ImageIcon(urlIcono).getImage();
                 setIconImage(icono);
@@ -281,7 +286,7 @@ public class Main extends javax.swing.JFrame {
                     }
                 }
             } else {
-                System.err.println("¡No se encontró Miku.png!");
+System.err.println("¡No se encontró " + APP_ICON + "!");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -485,7 +490,7 @@ public class Main extends javax.swing.JFrame {
 
     private void mostrarAyuda() {
         JOptionPane.showMessageDialog(this, 
-            "Proyecto Chafaint 2 v" + APP_VERSION + "\n" +
+            APP_NM + " v" + APP_VERSION + "\n" +
             "Modo Círculo:\n" +
             "- 1er clic: centro\n" +
             "- 2do clic: radio (define tamaño)\n" +
@@ -513,24 +518,27 @@ public class Main extends javax.swing.JFrame {
     
     private void HV() {
         JOptionPane.showMessageDialog(this, 
-            "Proyecto Chafaint 2 v" + APP_VERSION + "\n" +
-            "Git del proyecto: " + APP_GIT + "\n" +
+            APP_NM + " v" + APP_VERSION + "\n" +
+            "Git del proyecto " + APP_GIT + "\n" +
+            "Codename: " + APP_CN + "\n" +
             "0.1: Creacion del proyecto\n" +
             "0.2: Se agregaron las funciones para hacer figuras redondas\n" +
             "0.2.1: Reestructura del codigo y optimizacion chafa\n" +
             "0.2.2: Mas bugueado que nunca, menos solucionado que siempre\n" +
             "0.2.3: Se añadio el link del repositorio del proyecto\n" +
-            "0.2.4: Aun no encunetro la forma de arreglar el error (el error es que nací :v)"
+            "0.2.4: Aun no encunetro la forma de arreglar el error (el error es que nací :v)\n" +
+            "0.2.5: Movi unas cosas aqui y alla y ya pueden ver el Codename <3"
         );
     }
         
     private void AcercaDE() {                                        
         JOptionPane.showMessageDialog(this, 
-            "Proyecto Chafaint 2 \n" +
+            APP_NM + "\n" +
             "Versión: " + APP_VERSION + "\n" +
             "Desarrollado por: " + APP_AUTHOR + "\n" +
             "Git del desarrollador: " + GIT_AUTHOR +"\n" +
-            "Git del proyecto: " + APP_GIT + "\n");
+            "Git del proyecto " + APP_GIT + "\n" +
+            "Codename: " + APP_CN);
     }
 
     
